@@ -13,6 +13,7 @@ from nltk.tokenize import word_tokenize
 # ---- Reproduire le prétraitement pour récupérer word2idx, idx2word, vocab_size ----
 nltk.download('stopwords')
 nltk.download('punkt')
+nltk.download('punkt_tab')
 stop_words = stopwords.words('english')
 
 def unicode_to_ascii(s):

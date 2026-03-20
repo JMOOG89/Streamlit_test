@@ -1,14 +1,11 @@
-#%%
 import pandas as pd
 from IPython.display import display
 
-#%%
 df = pd.read_csv(r"C:\Users\julie\Desktop\Jérôme\Data Scientist\Dossier Formation\Ex_Streamlit\MovieReview.csv", sep=",", on_bad_lines='skip')
 display(df.head())
 print(df.shape)
 
 df = df.drop('sentiment', axis=1)
-# %%
 import re
 import unicodedata
 import nltk
@@ -40,7 +37,6 @@ def preprocess_sentence(w):
 
 df.review = df.review.apply(lambda x :preprocess_sentence(x))
 df.head()
-# %%
 import tensorflow as tf
 tokenizer = tf.keras.preprocessing.text.Tokenizer(num_words=10000)
 tokenizer.fit_on_texts(df.review)
@@ -49,8 +45,6 @@ tokenizer.fit_on_texts(df.review)
 word2idx = tokenizer.word_index
 idx2word = tokenizer.index_word
 vocab_size = tokenizer.num_words
-
-
 
 import numpy as np
 
