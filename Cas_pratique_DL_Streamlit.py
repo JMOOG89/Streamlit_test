@@ -1,6 +1,6 @@
 import streamlit as st
-from tensorflow.keras import Sequential
-from tensorflow.keras.layers import Embedding, Dense, GlobalAveragePooling1D
+from keras import Sequential
+from keras.layers import Embedding, Dense, GlobalAveragePooling1D
 
 st.title("Modèle Word2Vec")
 

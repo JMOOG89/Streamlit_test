@@ -3,7 +3,7 @@ import pandas as pd
 from IPython.display import display
 
 #%%
-df = pd.read_csv(r"C:\Users\julie\Desktop\Jérôme\Data Scientist\Dossier Formation\Ex_Streamlit\MovieReview.csv")
+df = pd.read_csv(r"C:\Users\julie\Desktop\Jérôme\Data Scientist\Dossier Formation\Ex_Streamlit\MovieReview.csv", sep=",", on_bad_lines='skip')
 display(df.head())
 print(df.shape)
 
@@ -78,8 +78,8 @@ for review in df.review:
 X = np.array(X).astype(int)
 y = np.array(Y).astype(int).reshape([-1,1])
 
-from tensorflow.keras import Sequential
-from tensorflow.keras.layers import Embedding, Dense, GlobalAveragePooling1D
+from keras import Sequential
+from keras.layers import Embedding, Dense, GlobalAveragePooling1D
 
 embedding_dim = 300
 model = Sequential()
